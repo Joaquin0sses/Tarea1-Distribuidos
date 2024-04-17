@@ -1,5 +1,16 @@
-helloo
-probandogit
-sdkaslkdl
-asdlkjjasd
-asdasd
+version: '3.8'
+
+services:
+  service1:
+    # Configuración del servicio 1
+
+  service2:
+    # Configuración del servicio 2
+
+networks:
+  network1:
+    # Configuración de la red 1
+
+volumes:
+  volume1:
+    # Configuración del volumen 1
