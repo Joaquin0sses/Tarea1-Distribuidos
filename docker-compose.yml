@@ -1,11 +1,20 @@
 version: '3.8'
 
 services:
-  service1:
-    # Configuración del servicio 1
+    cache:
+        image: bitnami/redis
+        ports:
+            - 6379:6379
+        enviroment:
+            - ALLOW_EMPTY_PASSWORD=yes
 
-  service2:
-    # Configuración del servicio 2
+    db:
+        image: postgres:alpine
+        ports:
+            - 5432:5432
+        enviroment:
+            - POSTGRES_PASSWORD=password
+        VOLUMES:
 
 networks:
   network1:
