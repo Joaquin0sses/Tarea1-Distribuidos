@@ -30,5 +30,11 @@ services:
             - 80:80
         depends_on:
             - db
-
+    client:
+        build: client
+        restart: always
+        ports:
+            - 3000:3000
+        volumes:
+            - ./proto:/usr/src/app/proto
 
