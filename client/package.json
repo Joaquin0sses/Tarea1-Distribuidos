@@ -15,5 +15,10 @@
     "redis": "^4.6.13"
   },
   "keywords": [],
-  "description": ""
+  "description": "",
+}
+{
+  "features": {
+    "buildkit": true
+  }
 }

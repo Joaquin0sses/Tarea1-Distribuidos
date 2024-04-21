@@ -34,7 +34,7 @@ const getById = async function(call, callback) {
     const pg_client = await connect_db();
     const res = await pg_client.query("SELECT * FROM my_table WHERE id = $1", [call.request.id]);
 
-    const persona = res.rows[0];
+    const my_table = res.rows[0];
 
     await pg_client.end();
     callback(null, {

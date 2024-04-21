@@ -1,4 +1,4 @@
-const PROTO_PATH = __dirname + '/../proto/example.proto';
+const PROTO_PATH = __dirname + '/../proto/grcp.proto';
 
 const express = require("express");
 const grpc = require("@grpc/grpc-js");
@@ -36,13 +36,13 @@ app.get("/personas/all", async (_, res) => {
 app.get("/personas", async (req, res) => {
     const id = Number(req.query.id);
 
-    client.GetById({ id: id }, (err, persona) => {
+    client.GetById({ id: id }, (err, my_table) => {
         if (err) {
             console.log(err);
             res.json({});
         }
 
-        res.json(persona);
+        res.json(my_table);
     })
 });
 
