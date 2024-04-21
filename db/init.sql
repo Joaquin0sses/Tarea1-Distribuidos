@@ -9998,4 +9998,4 @@ Insert Into my_table (id, value) Values (9996, '024');
 Insert Into my_table (id, value) Values (9997, '336');  
 Insert Into my_table (id, value) Values (9998, '924');  
 Insert Into my_table (id, value) Values (9999, '969');  
-Insert Into my_table (id, value) Values (10000, '738');  
+Insert Into my_table (id, value) Values (10000, '738');
