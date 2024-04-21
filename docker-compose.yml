@@ -5,21 +5,30 @@ services:
         image: bitnami/redis
         ports:
             - 6379:6379
-        enviroment:
+        environment:
             - ALLOW_EMPTY_PASSWORD=yes
 
     db:
-        image: postgres:alpine
+        image:
+            postgres:alpine
         ports:
             - 5432:5432
-        enviroment:
-            - POSTGRES_PASSWORD=password
-        VOLUMES:
+        environment:
+            POSTGRES_USER: user
+            POSTGRES_PASSWORD: password
+            POSTGRES_DB: data
+        volumes:
+            - ./db/init.sql:/docker-entrypoint-initdb.d/init.sql
 
-networks:
-  network1:
-    # Configuración de la red 1
+    pgadmin:
+        image:
+            dpage/pgadmin4
+        environment:
+            PGADMIN_DEFAULT_EMAIL: "admin@admin.com"
+            PGADMIN_DEFAULT_PASSWORD: "admin"
+        ports:
+            - 80:80
+        depends_on:
+            - db
 
-volumes:
-  volume1:
-    # Configuración del volumen 1
+
